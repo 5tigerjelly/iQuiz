@@ -14,6 +14,8 @@ public class topic{
     public var questions : [question]
     
     init(title:String, desc:String, questions:[question]){
-    
+        self.title = title
+        self.desc = desc
+        self.questions = questions
     }
 }

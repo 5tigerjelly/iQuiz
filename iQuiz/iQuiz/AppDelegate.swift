@@ -8,6 +8,31 @@
 
 import UIKit
 
+class Question
+{
+    init(text : String, a1 : String, a2 : String, a3 : String, a4 : String, a : Int) {
+        questionText = text
+        answer1 = a1
+        answer2 = a2
+        answer3 = a3
+        answer4 = a4
+        theAnswer = a
+    }
+    
+    var questionText : String = ""
+    
+    var answer1 : String = ""
+    var answer2 : String = ""
+    var answer3 : String = ""
+    var answer4 : String = ""
+    
+    var theAnswer : Int = -1
+    
+    var usersAnswer : Int? = nil
+}
+
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

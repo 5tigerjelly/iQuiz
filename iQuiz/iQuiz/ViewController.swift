@@ -43,5 +43,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell;
     }
+    
+    @IBAction func settings(sender: AnyObject) {
+        let alert = UIAlertController(title: "Settings", message: "Settings go here", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 }
 

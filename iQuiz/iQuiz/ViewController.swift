@@ -16,6 +16,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        let alertController: UIAlertController = UIAlertController(title: "Settings go here")
 //    }
     
+    //call JSON
+    var dataArray : NSArray?
+    var targetURL = "tednewardsandbox.site44.com/questions.json"
+    func getJSON() {
+        let baseString = "http://"
+        let url = NSURL(string: (baseString + targetURL))
+        
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+            if (data != nil) {
+                do {
+                    self.dataArray = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSArray
+                } catch {
+                    self.dataArray = nil
+                }
+            }
+            else {
+                print("No Data")
+            }
+        }
+        task.resume()
+    }
+    
     var Titles = ["Mathematics", "Marvel Super Heroes", "Science"]
     var Descs = ["Test your knowledge on Mathematics", "Test your knowledge on Marvel Super Heroes", "Test your knowledge on Science"]
     var images = [UIImage(named: "math"), UIImage(named: "marvel"), UIImage(named: "science")]

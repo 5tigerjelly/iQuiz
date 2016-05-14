@@ -18,6 +18,7 @@
 		9D5ED45F1CE2DD31003F997C /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5ED45E1CE2DD31003F997C /* ResultsViewController.swift */; };
 		9D5ED4611CE2E02D003F997C /* question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5ED4601CE2E02D003F997C /* question.swift */; };
 		9D5ED4631CE2E1CA003F997C /* topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5ED4621CE2E1CA003F997C /* topic.swift */; };
+		9D95EC681CE6A827004266A3 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D95EC671CE6A827004266A3 /* Info.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		9D5ED45E1CE2DD31003F997C /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		9D5ED4601CE2E02D003F997C /* question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = question.swift; sourceTree = "<group>"; };
 		9D5ED4621CE2E1CA003F997C /* topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = topic.swift; sourceTree = "<group>"; };
+		9D95EC671CE6A827004266A3 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				9D1013A91CD6D22400809A32 /* ViewController.swift */,
 				9D5ED4601CE2E02D003F997C /* question.swift */,
 				9D5ED4621CE2E1CA003F997C /* topic.swift */,
+				9D95EC671CE6A827004266A3 /* Info.swift */,
 				9D1013AB1CD6D22400809A32 /* Main.storyboard */,
 				9D5ED45A1CE2DC78003F997C /* QuestionViewController.swift */,
 				9D5ED45E1CE2DD31003F997C /* ResultsViewController.swift */,
@@ -156,6 +159,7 @@
 				9D1013AA1CD6D22400809A32 /* ViewController.swift in Sources */,
 				9D1013BC1CD6D46D00809A32 /* CustomCell.swift in Sources */,
 				9D5ED45D1CE2DCEF003F997C /* AnswerViewController.swift in Sources */,
+				9D95EC681CE6A827004266A3 /* Info.swift in Sources */,
 				9D5ED45B1CE2DC78003F997C /* QuestionViewController.swift in Sources */,
 				9D1013A81CD6D22400809A32 /* AppDelegate.swift in Sources */,
 				9D5ED4631CE2E1CA003F997C /* topic.swift in Sources */,

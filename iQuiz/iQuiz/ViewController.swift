@@ -8,42 +8,31 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+struct JSONlink {
+    static var site = "http://tednewardsandbox.site44.com/questions.json"
+}
+
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UITextFieldDelegate {
 
     @IBOutlet var tableView: UITableView!
     
-//    @IBAction func alertBox(sender: AnyObject) {
-//        let alertController: UIAlertController = UIAlertController(title: "Settings go here")
-//    }
+    var images = [UIImage(named: "science"), UIImage(named: "marvel"), UIImage(named: "math")]
+    var topicname : [String] = []
+    var Desc : [String] = []
     
-    //call JSON
-    var dataArray : NSArray?
-    var targetURL = "tednewardsandbox.site44.com/questions.json"
-    func getJSON() {
-        let baseString = "http://"
-        let url = NSURL(string: (baseString + targetURL))
-        
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-            if (data != nil) {
-                do {
-                    self.dataArray = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSArray
-                } catch {
-                    self.dataArray = nil
-                }
-            }
-            else {
-                print("No Data")
-            }
-        }
-        task.resume()
-    }
-    
-    var Titles = ["Mathematics", "Marvel Super Heroes", "Science"]
-    var Descs = ["Test your knowledge on Mathematics", "Test your knowledge on Marvel Super Heroes", "Test your knowledge on Science"]
-    var images = [UIImage(named: "math"), UIImage(named: "marvel"), UIImage(named: "science")]
+    let info = Info()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        self.info.HTTPRequest {
+            
+            self.topicname = self.info.names
+            self.Desc = self.info.descrs
+            
+            self.tableView.reloadData()
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -53,16 +42,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return topicname.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
         
         cell.photo.image = images[indexPath.row]
-        cell.Title.text = Titles[indexPath.row]
-        cell.Desc.text = Descs[indexPath.row]
-        
+        cell.Title.text = topicname[indexPath.row]
+        cell.Desc.text = Desc[indexPath.row]
         return cell;
     }
     

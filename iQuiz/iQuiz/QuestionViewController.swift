@@ -14,6 +14,9 @@ class QuestionViewController: UIViewController {
     var counting : Int = 0
     
     var questiontitle = ""
+    var useranswer = 4
+    var totalcorrect = 0
+    var totalquestion = 0
     
     @IBOutlet weak var questi: UILabel!
     
@@ -39,21 +42,33 @@ class QuestionViewController: UIViewController {
     }
 
     @IBAction func press1(sender: AnyObject) {
+        useranswer = 0
     }
     
     @IBAction func press2(sender: AnyObject) {
+        useranswer = 1
     }
     
     @IBAction func press3(sender: AnyObject) {
+        useranswer = 2
     }
     
     @IBAction func press4(sender: AnyObject) {
+        useranswer = 3
     }
     
     @IBAction func clickSubmit(sender: AnyObject) {
-        let qVC = self.storyboard?.instantiateViewControllerWithIdentifier("Answerpage") as! AnswerViewController
-        //qVC.questionarray = topics[indexPath.row]
-        self.presentViewController(qVC, animated: true, completion: nil)
+        if useranswer != 4 {
+            if questionarray!.questions[counting].answernum == useranswer {
+                totalcorrect += 1
+            }
+            totalquestion += 1
+            let qVC = self.storyboard?.instantiateViewControllerWithIdentifier("Answerpage") as! AnswerViewController
+            qVC.counting = self.counting
+            qVC.questionarray = self.questionarray
+            self.presentViewController(qVC, animated: true, completion: nil)
+        }
+        
     }
     /*
     // MARK: - Navigation

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OQ3-y7-diq">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,10 +7,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--mainpage-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainpage" title="mainpage" id="BYZ-38-t0r" customClass="ViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -114,10 +114,10 @@
             </objects>
             <point key="canvasLocation" x="996" y="1355"/>
         </scene>
-        <!--QuizQuestion-->
+        <!--Questionstory-->
         <scene sceneID="H19-Mz-rwf">
             <objects>
-                <viewController storyboardIdentifier="Questionstory" title="QuizQuestion" id="NZ2-kH-6aY" customClass="QuestionViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Questionstory" title="Questionstory" id="NZ2-kH-6aY" customClass="QuestionViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wpD-IM-YBZ"/>
                         <viewControllerLayoutGuide type="bottom" id="fDJ-2T-FJ2"/>
@@ -225,10 +225,10 @@
             </objects>
             <point key="canvasLocation" x="624" y="568"/>
         </scene>
-        <!--Results View Controller-->
+        <!--resultpage-->
         <scene sceneID="abV-9l-6Lc">
             <objects>
-                <viewController storyboardIdentifier="ResultsViewController" id="OQ3-y7-diq" customClass="ResultsViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="resultpage" title="resultpage" id="OQ3-y7-diq" customClass="ResultsViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FNU-Tj-jBi"/>
                         <viewControllerLayoutGuide type="bottom" id="1Aa-Km-ned"/>
@@ -237,31 +237,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOf-fl-hk6">
-                                <rect key="frame" x="124" y="63" width="352" height="174"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="resulttext" text="Result" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOf-fl-hk6">
+                                <rect key="frame" x="20" y="46" width="560" height="231"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="231" id="wgN-3Q-HvD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pE-kI-OVa">
-                                <rect key="frame" x="283" y="436" width="34" height="30"/>
-                                <state key="normal" title="Back"/>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Next" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWL-sx-qgY">
+                                <rect key="frame" x="20" y="486" width="560" height="30"/>
+                                <color key="backgroundColor" red="0.96118691379999999" green="1" blue="0.51819271690000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="HOME"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="tpn-kg-Zek"/>
+                                    <action selector="answernext:" destination="tPz-vb-XbI" eventType="touchUpInside" id="4jk-C3-4Sf"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="6jb-rB-xyD"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WOf-fl-hk6" firstAttribute="top" secondItem="FNU-Tj-jBi" secondAttribute="bottom" constant="26" id="95b-I0-YyU"/>
+                            <constraint firstItem="WOf-fl-hk6" firstAttribute="leading" secondItem="NWL-sx-qgY" secondAttribute="leading" id="BLp-Rz-4na"/>
+                            <constraint firstItem="WOf-fl-hk6" firstAttribute="leading" secondItem="Z1O-JM-7xG" secondAttribute="leadingMargin" id="OkB-Mz-wXi"/>
+                            <constraint firstItem="WOf-fl-hk6" firstAttribute="trailing" secondItem="Z1O-JM-7xG" secondAttribute="trailingMargin" id="TVN-m9-kPY"/>
+                            <constraint firstItem="1Aa-Km-ned" firstAttribute="top" secondItem="NWL-sx-qgY" secondAttribute="bottom" constant="84" id="alb-Yn-exR"/>
+                            <constraint firstItem="WOf-fl-hk6" firstAttribute="trailing" secondItem="NWL-sx-qgY" secondAttribute="trailing" id="lMc-9U-gis"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LhE-pr-uCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1323" y="568"/>
         </scene>
-        <!--Answer View Controller-->
+        <!--Answerpage-->
         <scene sceneID="YzN-Ud-fVM">
             <objects>
-                <viewController storyboardIdentifier="Answerpage" id="tPz-vb-XbI" customClass="AnswerViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Answerpage" title="Answerpage" id="tPz-vb-XbI" customClass="AnswerViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lgh-E3-bem"/>
                         <viewControllerLayoutGuide type="bottom" id="Uou-UE-7ai"/>
@@ -270,30 +283,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="Answertitle" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9CC-Lk-Ukm">
-                                <rect key="frame" x="20" y="28" width="560" height="291"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="Next" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dk-9S-IUy">
-                                <rect key="frame" x="284" y="498" width="32" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" restorationIdentifier="Next" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dk-9S-IUy">
+                                <rect key="frame" x="20" y="498" width="560" height="30"/>
+                                <color key="backgroundColor" red="0.9611869138380672" green="1" blue="0.51819271688963331" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="answernext:" destination="tPz-vb-XbI" eventType="touchUpInside" id="ocn-ZK-RWB"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxh-97-GBw">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxh-97-GBw">
                                 <rect key="frame" x="20" y="20" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="BwE-Cs-Ceh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" restorationIdentifier="resulttext" text="Answer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHi-kg-tnE">
+                                <rect key="frame" x="20" y="58" width="560" height="251"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dxh-97-GBw" firstAttribute="leading" secondItem="WyO-JZ-0pD" secondAttribute="leadingMargin" id="3XC-09-AWY"/>
+                            <constraint firstItem="0dk-9S-IUy" firstAttribute="top" secondItem="bHi-kg-tnE" secondAttribute="bottom" constant="189" id="KZP-DA-O5S"/>
+                            <constraint firstItem="0dk-9S-IUy" firstAttribute="top" secondItem="bHi-kg-tnE" secondAttribute="bottom" constant="189" id="MmW-O1-LDm"/>
+                            <constraint firstItem="0dk-9S-IUy" firstAttribute="leading" secondItem="WyO-JZ-0pD" secondAttribute="leadingMargin" id="Qo9-0o-XNB"/>
+                            <constraint firstItem="Uou-UE-7ai" firstAttribute="top" secondItem="0dk-9S-IUy" secondAttribute="bottom" constant="72" id="SRz-gP-hpq"/>
+                            <constraint firstItem="bHi-kg-tnE" firstAttribute="top" secondItem="dxh-97-GBw" secondAttribute="bottom" constant="8" id="UE0-8C-pW4"/>
+                            <constraint firstItem="0dk-9S-IUy" firstAttribute="trailing" secondItem="WyO-JZ-0pD" secondAttribute="trailingMargin" id="kKR-XH-beG"/>
+                            <constraint firstItem="bHi-kg-tnE" firstAttribute="trailing" secondItem="WyO-JZ-0pD" secondAttribute="trailingMargin" id="kMP-Ug-sJf"/>
                             <constraint firstItem="dxh-97-GBw" firstAttribute="top" secondItem="lgh-E3-bem" secondAttribute="bottom" id="oga-Gf-njr"/>
+                            <constraint firstItem="bHi-kg-tnE" firstAttribute="leading" secondItem="WyO-JZ-0pD" secondAttribute="leadingMargin" id="skf-cl-21j"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Ansertextbox" destination="bHi-kg-tnE" id="XDK-kv-N5x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oiV-Zq-uDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -301,6 +329,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tpn-kg-Zek"/>
+        <segue reference="6jb-rB-xyD"/>
     </inferredMetricsTieBreakers>
 </document>

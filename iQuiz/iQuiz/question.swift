@@ -11,10 +11,11 @@ import Foundation
 public class question{
 
     public var question : String
-    public var answernum : Int
+    public var answernum : String
     public var answers : [String]
+
     
-    init (question:String, answernum:Int, answers:[String]){
+    init (question:String, answernum:String, answers:[String]){
         self.question = question
         self.answernum = answernum
         self.answers = answers

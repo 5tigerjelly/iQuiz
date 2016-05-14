@@ -1,4 +1,4 @@
-//
+ //
 //  ViewController.swift
 //  iQuiz
 //
@@ -19,6 +19,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var images = [UIImage(named: "science"), UIImage(named: "marvel"), UIImage(named: "math")]
     var topicname : [String] = []
     var Desc : [String] = []
+    var questionarray : [[question]] = []
+    var topics : [topic] = [topic]()
     
     let info = Info()
     
@@ -30,6 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             self.topicname = self.info.names
             self.Desc = self.info.descrs
+            self.topics = self.info.topics
             
             self.tableView.reloadData()
         }
@@ -58,6 +61,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let alert = UIAlertController(title: "Settings", message: "Settings go here", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let qVC = self.storyboard?.instantiateViewControllerWithIdentifier("Questionstory") as! QuestionViewController
+         qVC.questionarray = topics[indexPath.row]
+        self.presentViewController(qVC, animated: true, completion: nil)
     }
 }
 

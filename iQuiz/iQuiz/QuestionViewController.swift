@@ -16,7 +16,7 @@ class QuestionViewController: UIViewController {
     var questiontitle = ""
     var useranswer = 4
     var totalcorrect = 0
-    var totalquestion = 0
+    
     
     @IBOutlet weak var questi: UILabel!
     
@@ -58,14 +58,17 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func clickSubmit(sender: AnyObject) {
+        var feedback = "You are WRONG"
         if useranswer != 4 {
             if questionarray!.questions[counting].answernum == useranswer {
                 totalcorrect += 1
+                feedback = "You are CORRECT"
             }
-            totalquestion += 1
             let qVC = self.storyboard?.instantiateViewControllerWithIdentifier("Answerpage") as! AnswerViewController
             qVC.counting = self.counting
             qVC.questionarray = self.questionarray
+            qVC.totalcorrect = self.totalcorrect
+            qVC.resulttext = feedback
             self.presentViewController(qVC, animated: true, completion: nil)
         }
         

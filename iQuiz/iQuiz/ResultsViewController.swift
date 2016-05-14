@@ -10,9 +10,17 @@ import UIKit
 
 class ResultsViewController: UIViewController {
 
+    
+    @IBOutlet weak var resultsbox: UILabel!
+    
+    var questionarray : topic!
+    var totalcorrect = 0
+    var counting = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        resultsbox.text = "You got \n \(totalcorrect) out of \(counting)"
+        
         // Do any additional setup after loading the view.
     }
 

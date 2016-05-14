@@ -57,10 +57,38 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell;
     }
     
-    @IBAction func settings(sender: AnyObject) {
-        let alert = UIAlertController(title: "Settings", message: "Settings go here", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+//    @IBAction func settings(sender: AnyObject) {
+//        let alert = UIAlertController(title: "Settings", message: "Settings go here", preferredStyle: UIAlertControllerStyle.Alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+//        self.presentViewController(alert, animated: true, completion: nil)
+//    }
+    @IBAction func showAlert(sender: AnyObject) {
+        let alertController : UIAlertController = UIAlertController(title: "Alert!", message: "Settings go here.", preferredStyle: .Alert)
+        let okAction : UIAlertAction = UIAlertAction(title: "Okay", style: .Default, handler: nil )
+        
+        alertController.addAction(okAction)
+        
+        alertController.addTextFieldWithConfigurationHandler { (textField: UITextField!) -> Void in
+            textField.placeholder = "New JSON link"
+        }
+        
+        let retrieveAction : UIAlertAction = UIAlertAction(title: "Check Now", style: .Cancel, handler: {[weak self]
+            (paramAction:UIAlertAction!) in
+            if let textFields = alertController.textFields {
+                let theTextFields = textFields as [UITextField]
+                let enteredText = theTextFields[0].text
+                if enteredText != nil {
+                    JSONlink.site = enteredText!
+                } else {
+                    JSONlink.site = "http://tednewardsandbox.site44.com/questions.json"
+                }
+                self!.tableView.reloadData()
+            }
+            })
+        
+        alertController.addAction(retrieveAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -14,10 +14,13 @@ class AnswerViewController: UIViewController {
     var counting = 0
     var topics : [topic] = []
     var questionarray : topic!
+    var totalcorrect = 0
+    var totalquestion = 0
+    var resulttext = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Ansertextbox.text = ""
+        Ansertextbox.text = "\(questionarray.questions[counting].question) \n \(questionarray.questions[counting].answers[questionarray!.questions[counting].answernum]) \n \(resulttext)"
 
         // Do any additional setup after loading the view.
     }
@@ -30,15 +33,15 @@ class AnswerViewController: UIViewController {
     @IBAction func answernext(sender: AnyObject) {
         if counting + 1 == questionarray.questions.count{
             let qVC = self.storyboard?.instantiateViewControllerWithIdentifier("resultpage") as! ResultsViewController
-            //qVC.counting = self.counting
-            
-            //qVC.questionarray = topics[indexPath.row]
+            qVC.totalcorrect = self.totalcorrect
+            counting += 1
+            qVC.counting = self.counting
             self.presentViewController(qVC, animated: true, completion: nil)
         }else{
             let qVC2 = self.storyboard?.instantiateViewControllerWithIdentifier("Questionstory") as! QuestionViewController
             counting += 1
             qVC2.counting = self.counting
-            
+            qVC2.totalcorrect = self.totalcorrect
             qVC2.questionarray = self.questionarray
             self.presentViewController(qVC2, animated: true, completion: nil)
         }

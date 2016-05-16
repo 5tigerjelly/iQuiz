@@ -86,17 +86,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="7yz-pY-xxa" firstAttribute="leading" secondItem="eCf-hd-tDv" secondAttribute="leading" id="79z-Xd-l9E"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eCf-hd-tDv" secondAttribute="trailing" constant="-20" id="8uV-KZ-MMY"/>
                             <constraint firstItem="eCf-hd-tDv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="D0P-fm-yaT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7yz-pY-xxa" secondAttribute="trailing" constant="-20" id="He8-Dg-HP3"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7yz-pY-xxa" secondAttribute="bottom" constant="20" id="IN6-fO-IJJ"/>
-                            <constraint firstItem="7yz-pY-xxa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Jcd-mp-kMW"/>
                             <constraint firstItem="7yz-pY-xxa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Mcv-Vk-DzY"/>
-                            <constraint firstItem="7yz-pY-xxa" firstAttribute="top" secondItem="eCf-hd-tDv" secondAttribute="bottom" id="Q0K-7G-fFU"/>
                             <constraint firstItem="7yz-pY-xxa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Skp-LA-UMA"/>
+                            <constraint firstItem="7yz-pY-xxa" firstAttribute="top" secondItem="eCf-hd-tDv" secondAttribute="bottom" id="Tej-O7-RH6"/>
                             <constraint firstItem="eCf-hd-tDv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="UH4-Q2-sht"/>
                             <constraint firstItem="7yz-pY-xxa" firstAttribute="top" secondItem="eCf-hd-tDv" secondAttribute="bottom" constant="63" id="UwN-dY-VkF"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7yz-pY-xxa" secondAttribute="bottom" id="Xha-Jg-PN0"/>
+                            <constraint firstItem="7yz-pY-xxa" firstAttribute="trailing" secondItem="eCf-hd-tDv" secondAttribute="trailing" id="VDX-fx-qNp"/>
+                            <constraint firstItem="7yz-pY-xxa" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="xoo-gD-c7u"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">

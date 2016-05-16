@@ -32,18 +32,18 @@ class AnswerViewController: UIViewController {
     
     @IBAction func answernext(sender: AnyObject) {
         if counting + 1 == questionarray.questions.count{
-            let qVC = self.storyboard?.instantiateViewControllerWithIdentifier("resultpage") as! ResultsViewController
-            qVC.totalcorrect = self.totalcorrect
+            let newviewcontrol = self.storyboard?.instantiateViewControllerWithIdentifier("resultpage") as! ResultsViewController
+            newviewcontrol.totalcorrect = self.totalcorrect
             counting += 1
-            qVC.counting = self.counting
-            self.presentViewController(qVC, animated: true, completion: nil)
+            newviewcontrol.counting = self.counting
+            self.presentViewController(newviewcontrol, animated: true, completion: nil)
         }else{
-            let qVC2 = self.storyboard?.instantiateViewControllerWithIdentifier("Questionstory") as! QuestionViewController
+            let otherviewpage = self.storyboard?.instantiateViewControllerWithIdentifier("Questionstory") as! QuestionViewController
             counting += 1
-            qVC2.counting = self.counting
-            qVC2.totalcorrect = self.totalcorrect
-            qVC2.questionarray = self.questionarray
-            self.presentViewController(qVC2, animated: true, completion: nil)
+            otherviewpage.counting = self.counting
+            otherviewpage.totalcorrect = self.totalcorrect
+            otherviewpage.questionarray = self.questionarray
+            self.presentViewController(otherviewpage, animated: true, completion: nil)
         }
         
     }

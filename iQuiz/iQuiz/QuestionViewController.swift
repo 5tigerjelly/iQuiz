@@ -64,12 +64,12 @@ class QuestionViewController: UIViewController {
                 totalcorrect += 1
                 feedback = "You are CORRECT"
             }
-            let qVC = self.storyboard?.instantiateViewControllerWithIdentifier("Answerpage") as! AnswerViewController
-            qVC.counting = self.counting
-            qVC.questionarray = self.questionarray
-            qVC.totalcorrect = self.totalcorrect
-            qVC.resulttext = feedback
-            self.presentViewController(qVC, animated: true, completion: nil)
+            let changeviewcontrol = self.storyboard?.instantiateViewControllerWithIdentifier("Answerpage") as! AnswerViewController
+            changeviewcontrol.counting = self.counting
+            changeviewcontrol.questionarray = self.questionarray
+            changeviewcontrol.totalcorrect = self.totalcorrect
+            changeviewcontrol.resulttext = feedback
+            self.presentViewController(changeviewcontrol, animated: true, completion: nil)
         }
         
     }

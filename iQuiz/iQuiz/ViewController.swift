@@ -92,9 +92,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let qVC = self.storyboard?.instantiateViewControllerWithIdentifier("Questionstory") as! QuestionViewController
-         qVC.questionarray = topics[indexPath.row]
-        self.presentViewController(qVC, animated: true, completion: nil)
+        let newveiwcontrol = self.storyboard?.instantiateViewControllerWithIdentifier("Questionstory") as! QuestionViewController
+         newveiwcontrol.questionarray = topics[indexPath.row]
+        self.presentViewController(newveiwcontrol, animated: true, completion: nil)
     }
 }
 
